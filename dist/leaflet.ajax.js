@@ -349,6 +349,7 @@ module.exports = function (url, options) {
     request.open('GET', url);
     if (options.headers) {
       Object.keys(options.headers).forEach(function (key) {
+        request.withCredentials = true;
         request.setRequestHeader(key, options.headers[key]);
       });
     }
